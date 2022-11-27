@@ -1,21 +1,43 @@
-## react redux
+# Alloew access to state via getState()
 
-## step1:
+# Alloew state to be updated via dispatch(action)
 
-create a store file in data folder
+# Resiter listener subscribe(listener)
 
-## step2:
+##for nested state updated
 
-configure store funcationality
+```
+  npm i immer
+```
 
-## step3:
+after that imporet produce method
 
-index.js in that file app component by provider from reacr-redux
+```
+  const produce = require('immer').produce;
+```
 
-## step4:
+```
+produce take two argument
+first argument current state,2nd arrow function
+arrow function take a argument "draft"
+```
 
-in provider component store props pass
+##Authrenction check
 
-## step5:
+```
+    const applyMiddleWare = redux.applyMiddleware;
+```
 
-createing redux action and reducer
+// redux_logger setUp step
+
+```
+    npm i redux-logger
+```
+
+```
+  const reduxLogger = require('redux-logger');
+```
+
+```
+ const logger = reduxLogger.createLogger();
+```

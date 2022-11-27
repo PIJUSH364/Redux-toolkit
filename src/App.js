@@ -1,16 +1,7 @@
-import { Box } from '@mui/material';
-import Cart from './components/Cart';
-import Home from './components/Home';
-import Navbar from './components/Navbar';
+import React from 'react';
 
 function App() {
-  return (
-    <Box bgcolor="GrayText">
-      <Navbar />
-      <Home />
-      <Cart />
-    </Box>
-  );
+  return <div>App</div>;
 }
 
 export default App;
