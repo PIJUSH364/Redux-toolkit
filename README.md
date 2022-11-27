@@ -55,3 +55,47 @@ n.b:we can pass as many as middleWare on createStore method
 ```
     const unSubscribe = store.subscribe(() => {});
 ```
+
+#lac15 Async action
+
+state={
+loading:true,
+data:[],
+erroe:``,
+}
+
+loading :: display a loading spinner in your component
+data :: list of users
+error :: display error to thr user
+
+n.b:list of data fetching by api
+
+# Async action creator
+
+\*\*\*redux-thank basicaly support or define asyn action creators easy way
+
+```
+    npm i redux-thunk
+```
+
+\*\*create a middleWare redux-thunk
+
+```
+    const applyMiddleWare = redux.applyMiddleware;
+```
+
+```
+    const thunkMiddleWare = require('redux-thunk').default;
+```
+
+at last middleWare apply on store
+
+```
+    const store = createStore(reducer, applyMiddleWare(thunkMiddleWare));
+```
+
+##Axios setUp
+
+```
+    const axios = require('axios');
+```
