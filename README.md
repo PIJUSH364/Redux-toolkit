@@ -41,3 +41,17 @@ arrow function take a argument "draft"
 ```
  const logger = reduxLogger.createLogger();
 ```
+
+##middleWare setup on store
+
+```
+    const store = createStore(rootReducer, applyMiddleWare(logger));
+```
+
+n.b:we can pass as many as middleWare on createStore method
+
+##unsubcribe method updated
+
+```
+    const unSubscribe = store.subscribe(() => {});
+```

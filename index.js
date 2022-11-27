@@ -94,13 +94,11 @@ const rootReducer = combineResucer({
 });
 
 //* all state value in that store
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleWare(logger));
 
 console.log('Initial store', store.getState());
 
-const unSubscribe = store.subscribe(() =>
-  console.log('updated state', store.getState())
-);
+const unSubscribe = store.subscribe(() => {});
 
 {
   // store.dispatch(orderCake());
