@@ -61,38 +61,23 @@ const reducer = (state = initialState, action) => {
 const fetchUsers = () => {
   return function (dispatch) {
     dispatch(fetchUsersRequest());
+
     axios
       .get('https://jsonplaceholder.typicode.com/users')
-      .then(function (response) {
-        // response.data is the users
-        const users = response.data.map((user) => user.id);
+      .then(function (res) {
+        const users = [9, 89, 545];
         dispatch(fetchUsersSuccess(users));
-        console.log(response);
+        // console.log('res_data', res.data);
       })
       .catch(function (error) {
+        // handle error
         dispatch(fetchUsersFailed(error.message));
-        console.log(error);
+        console.log('Error msg', error);
       });
   };
 };
 
 const store = createStore(reducer, applyMiddleWare(thunkMiddleWare));
 
-// store.subscribe(() => console.log('subScribe', store.getState()));
-// store.dispatch(fetchUsers());
-
-function dataFetch() {
-  console.log('data featching');
-  axios
-    .get('https://jsonplaceholder.typicode.com/users')
-    .then(function (response) {
-      // response.data is the users
-
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-}
-
-dataFetch();
+store.subscribe(() => console.log('subScribe', store.getState()));
+store.dispatch(fetchUsers());
